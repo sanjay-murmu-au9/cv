@@ -1,487 +1,543 @@
 <html>
-<head>
-    <meta name="viewport" content="width=device-width"/>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&display=swap"
-          rel="stylesheet">
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&display=swap"
+      rel="stylesheet"
+    />
     <title>Sanjay &raquo; Resume</title>
     <style>
-        :root {
-            --body: #4179bd15;
-            --bg: #4179bd07;
-            --header: #e5e5e8;
-            --accent: #4179bd;
-            --text: #202030;
-        }
+      :root {
+        --body: #4179bd15;
+        --bg: #4179bd07;
+        --header: #e5e5e8;
+        --accent: #4179bd;
+        --text: #202030;
+      }
 
-        html, body {
-            background: silver;
-            margin: 0;
-        }
+      html,
+      body {
+        background: silver;
+        margin: 0;
+        padding: 0;
+      }
 
-        * {
-            font-family: 'Bricolage Grotesque', sans-serif;
-        }
+      * {
+        font-family: "Bricolage Grotesque", sans-serif;
+      }
 
+      .alpha-50 {
+        opacity: 0.5;
+      }
 
-        .alpha-50 {
-            opacity: 0.5;
-        }
+      .alpha-75 {
+        opacity: 0.75;
+      }
 
-        .alpha-75 {
-            opacity: 0.75;
-        }
+      .mv-5 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
 
-        .mv-5 {
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
+      .container {
+        width: 100%;
+        max-width: 210mm;
+        margin: 0 auto;
+        background: white;
+        margin-top: 0;
+      }
 
-        .container {
-            width: 100%;
-            max-width: 210mm;
-            margin: 0 auto;
-            background: white;
-        }
+      .in {
+        padding: 20px;
+      }
 
+      @media print {
         .in {
-            padding: 20px;
+          padding: 10px;
+        }
+        
+        header .in {
+          padding-top: 0;
+        }
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+
+      .avatar {
+        height: 120px;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .flex-mid {
+        align-items: center;
+      }
+
+      .flex-center {
+        justify-content: center;
+      }
+
+      .flex-fill {
+        flex: 1;
+      }
+
+      .gap-m {
+        gap: 20px;
+      }
+
+      .gap-s {
+        gap: 10px;
+      }
+
+      .grid-resume {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 40%) 60%;
+      }
+
+      @media screen and (max-width: 480px) {
+        .grid-resume {
+          grid-template-columns: 100%;
         }
 
-        h1, h2, h3, h4, h5, h6, p {
-            margin: 0;
+        .order-0 {
+          order: 0;
         }
 
-        .avatar {
-            height: 120px;
+        .order-1 {
+          order: 1;
         }
 
-        .flex {
-            display: flex;
+        header > div {
+          flex-wrap: wrap;
         }
 
-        .flex-mid {
-            align-items: center;
+        header > div > * {
+          width: 100%;
         }
-
-        .flex-center {
-            justify-content: center;
+        .text-center-m {
+          text-align: center;
         }
+      }
 
-        .flex-fill {
-            flex: 1;
+      img {
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      @media print {
+        .container {
+          height: 100vh;
         }
-
-        .gap-m {
-            gap: 20px;
-        }
-
-        .gap-s {
-            gap: 10px;
-        }
-
 
         .grid-resume {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, 40%) 60%;
-        }
-
-        @media screen and (max-width: 480px) {
-            .grid-resume {
-                grid-template-columns: 100%;
-            }
-
-            .order-0 {
-                order: 0;
-            }
-
-            .order-1 {
-                order: 1;
-            }
-
-            header > div {
-                flex-wrap: wrap;
-            }
-
-            header > div > * {
-                width: 100%;
-            }
-            .text-center-m{
-                text-align: center;
-            }
-        }
-
-        img {
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        @media print {
-            .container {
-                height: 100vh;
-            }
-
-            .grid-resume {
-                height: calc(100vh - 180px);
-            }
-
-            header {
-                height: 180px;
-            }
-        }
-
-        .left {
-            background: var(--bg);
-        }
-
-        .section-title {
-            margin-top: 30px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            opacity: 0.6;
-        }
-
-        .section-title hr {
-            background: none;
-            border: none;
-            border-top: 3px solid var(--accent);
-        }
-
-        .contacts a {
-            text-decoration: none;
-            padding: 4px 0;
-            color: var(--text);
-        }
-
-        .chips {
-            display: flex;
-            flex-wrap: wrap;
-            padding-left: 24px;
-        }
-
-        .chips.pl-0 {
-            padding-left: 0;
-        }
-
-        .chips li {
-            list-style: none;
-            background: var(--body);
-            padding: 4px 12px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            border-radius: 20px;
-            font-size: smaller;
+          height: calc(100vh - 120px);
         }
 
         header {
-            background: var(--body);
+          height: 120px;
         }
+      }
 
-        .skill > i {
-            color: var(--accent);
-            font-style: normal;
-        }
+      .left {
+        background: var(--bg);
+      }
 
-        .text-accent {
-            color: var(--accent);
-        }
+      .section-title {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        opacity: 0.6;
+      }
 
-        .text-sm {
-            font-size: small;
-        }
+      .section-title hr {
+        background: none;
+        border: none;
+        border-top: 3px solid var(--accent);
+      }
 
-        .mt-0 {
-            margin-top: 0;
-        }
+      .contacts a {
+        text-decoration: none;
+        padding: 4px 0;
+        color: var(--text);
+      }
 
-        .mt-10 {
-            margin-top: 10px;
-        }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 24px;
+      }
 
-        .mt-20 {
-            margin-top: 20px;
-        }
+      .chips.pl-0 {
+        padding-left: 0;
+      }
 
-        .justify {
-            text-align: justify;
-        }
+      .chips li {
+        list-style: none;
+        background: var(--body);
+        padding: 4px 12px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        border-radius: 20px;
+        font-size: smaller;
+      }
 
-        ul {
-            padding-left: 24px;
-        }
+      header {
+        background: var(--body);
+      }
 
+      .skill > i {
+        color: var(--accent);
+        font-style: normal;
+      }
+
+      .text-accent {
+        color: var(--accent);
+      }
+
+      .text-sm {
+        font-size: small;
+      }
+
+      .mt-0 {
+        margin-top: 0;
+      }
+
+      .mt-10 {
+        margin-top: 10px;
+      }
+
+      .mt-20 {
+        margin-top: 20px;
+      }
+
+      .justify {
+        text-align: justify;
+      }
+
+      ul {
+        padding-left: 24px;
+      }
     </style>
-</head>
-<body>
-<div class="container">
-    <header>
-        <div class="in flex flex-mid gap-m">
-            <div class="order-1">
-                <h1 class="text-center-m">Sanjay Murmu</h1>
-                <h4 class="alpha-75 text-center-m">Software Engineer-1</h4>
-                <p class="alpha-50 justify mt-10">
-                    Accomplished back-end software engineer with a proven track record of delivering exceptional products.
-                    Proficient in Node.js, focusing on creating efficient and scalable solutions.
-                </p>
-            </div>
-            <div class="flex flex-mid flex-center">
-                <!-- <img class="avatar order-0" src="sanjay.png"/> -->
-            </div>
+  </head>
+  <body>
+    <div class="container">
+    <header style="margin-bottom: 0; padding-bottom: 0; margin-top: 0; padding-top: 0;">
+      <div class="in flex flex-mid gap-m" style="font-size: 0.95em; padding-bottom: 0; padding-top: 0;">
+        <div class="order-1">
+        <h1 class="text-center-m" style="font-size: 2em;">Sanjay Murmu</h1>
+        <h4 class="alpha-75 text-center-m" style="font-size: 1.1em;">Software Engineer-I</h4>
+        <p class="alpha-50 justify mt-10">
+          Accomplished back-end software engineer with a proven track record
+          of delivering exceptional products. Proficient in Node.js,
+          focusing on creating efficient and scalable solutions.
+        </p>
         </div>
+        <!-- <div class="flex flex-mid flex-center"> -->
+        <!-- <img class="avatar order-0" src="sanjay.png"/> -->
+        <!-- </div> -->
+      </div>
     </header>
-    <main class="grid-resume">
-        <div class="left">
-            <div class="in">
-                <section class="contacts">
-                    <a class="flex flex-mid gap-s" href="tel:+918210984865">
-                        <i class="ri-smartphone-line"></i>
-                        <span>+91-8210984865</span>
-                    </a>
-                    <a class="flex flex-mid gap-s" href="mailto:sanjaymurmu40work@gmail.com">
-                        <i class="ri-mail-open-line"></i>
-                        <span>sanjaymurmu40work@gmail.com</span>
-                    </a>
-                    <a class="flex flex-mid gap-s" href="https://maps.app.goo.gl/Xt7ntTgGLtv2SjeEA">
-                        <i class="ri-map-pin-2-line"></i>
-                        <span>Delhi, India</span>
-                    </a>
-                    <div class="flex flex-mid gap-m">
-                        <a class="flex flex-mid gap-s" href="https://github.com/sanjay-murmu-au9">
-                            <i class="ri-github-line"></i>
-                            <span>Github</span>
-                        </a>
-                        <a class="flex flex-mid gap-s" href="https://www.linkedin.com/in/sanjay-murmu-733933221/">
-                            <i class="ri-linkedin-box-line"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                    </div>
-                </section>
-                <section class="skills">
-                    <h2 class="section-title flex gap-m flex-mid">
-                        <span>Skills</span>
-                        <hr class="flex-fill"/>
-                    </h2>
-                    <h4 class="flex skill flex-mid gap-s">
-                        <i class="ri-npmjs-line"></i>
-                        <span class="flex-fill">Languages</span>
-                    </h4>
-                    <ul class="chips pl-0">
-                        <li>TypeScript</li>
-                        <li>Node.js</li>
-                        <li>React</li>
-                    </ul>
-                    <h4 class="flex skill flex-mid gap-s">
-                        <i class="ri-database-2-line"></i>
-                        <span class="flex-fill">Database</span>
-                    </h4>
-                    <ul class="chips pl-0">
-                        <li>PostgreSQL</li>
-                        <li>SQL</li>
-                        <li>Firestore</li>
-                        <li>MongoDB</li>
-                    </ul>
-                    <h4 class="flex skill flex-mid gap-s">
-                        <i class="ri-cloud-line"></i>
-                        <span class="flex-fill">AWS and GCP</span>
-                    </h4>
-                    <ul class="chips pl-0">
-                        <li>OpenSearch</li>
-                        <li>Elasticache</li>
-                        <li>RDS</li>
-                        <li>Neptune</li>
-                        <li>Lambda</li>
-                        <li>Kinesis</li>
-                        <li>BigQuery</li>
-                        <li>Cloud Functions</li>
-                    </ul>
-                </section>
-                <section class="education">
-                    <h2 class="section-title flex gap-m flex-mid">
-                        <span>Education</span>
-                        <hr class="flex-fill"/>
-                    </h2>
-                    <div>
-                        <h4>Guru Gobind Singh Indraprastha University</h4>
-                        <p class="alpha-75 mv-5 flex text-sm flex-mid gap-m">
-                            <span class="flex-fill">Northern India Engineering College</span>
-                            <span>2015-2019</span>
-                        </p>
-                        <p class="text-accent text-sm flex gap-m flex-mid">
-                            <span class="flex-fill">BTech (Information Technology)</span>
-                            <span>CGPA: 7.6</span>
-                        </p>
-                    </div>
-                    <div class="mt-20">
-                        <h4>CBSE, Delhi</h4>
-                        <p class="alpha-75 mv-5 flex text-sm flex-mid gap-m">
-                            <span class="flex-fill">Greenway Modern School</span>
-                            <span>2015-2019</span>
-                        </p>
-                        <p class="text-accent mv-5 flex text-sm flex-mid gap-m">
-                            <span class="flex-fill">12th</span>
-                            <span>79.4%</span>
-                        </p>
-                        <p class="text-accent mv-5 flex text-sm flex-mid gap-m">
-                            <span class="flex-fill">10th</span>
-                            <span>CGPA: 9.4</span>
-                        </p>
-                    </div>
-                </section>
-                <section class="languages">
-                    <h2 class="section-title flex gap-m flex-mid">
-                        <span>Languages</span>
-                        <hr class="flex-fill"/>
-                    </h2>
-                    <ul class="chips pl-0">
-                        <li>English</li>
-                        <li>Hindi</li>
-                    </ul>
-                </section>
+    <main class="grid-resume" style="margin-top: -10px;">
+      <div class="left">
+        <div class="in">
+        <section class="contacts">
+          <a class="flex flex-mid gap-s" href="tel:+918210984865">
+            <i class="ri-smartphone-line"></i>
+            <span>+91-8210984865</span>
+          </a>
+          <a
+            class="flex flex-mid gap-s"
+            href="mailto:sanjaymurmu40work@gmail.com"
+          >
+            <i class="ri-mail-open-line"></i>
+            <span>sanjaymurmu40work@gmail.com</span>
+          </a>
+          <a
+            class="flex flex-mid gap-s"
+            href="https://maps.app.goo.gl/Xt7ntTgGLtv2SjeEA"
+          >
+            <i class="ri-map-pin-2-line"></i>
+            <span>Delhi, India</span>
+          </a>
+          <div class="flex flex-mid gap-m">
+            <a
+            class="flex flex-mid gap-s"
+            href="https://github.com/sanjay-murmu-au9"
+            >
+            <i class="ri-github-line"></i>
+            <span>Github</span>
+            </a>
+            <a
+            class="flex flex-mid gap-s"
+            href="https://www.linkedin.com/in/sanjay-murmu-733933221/"
+            >
+            <i class="ri-linkedin-box-line"></i>
+            <span>LinkedIn</span>
+            </a>
+          </div>
+        </section>
+        <section class="""skills">
+          <h2 class="section-title flex gap-m flex-mid">
+            <span>Skills</span>
+            <hr class="flex-fill" />
+          </h2>
+          <h4 class="flex skill flex-mid gap-s">
+            <i class="ri-npmjs-line"></i>
+            <span class="flex-fill">Languages</span>
+          </h4>
+          <ul class="chips pl-0">
+            <li>TypeScript</li>
+            <li>Node.js</li>
+            <li>React</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>GraphQL</li>
+          </ul>
+          <h4 class="flex skill flex-mid gap-s">
+            <i class="ri-database-2-line"></i>
+            <span class="flex-fill">Database</span>
+          </h4>
+          <ul class="chips pl-0">
+            <li>PostgreSQL</li>
+            <li>SQL</li>
+            <li>Firestore</li>
+            <li>MongoDB</li>
+          </ul>
+          <h4 class="flex skill flex-mid gap-s">
+            <i class="ri-cloud-line"></i>
+            <span class="flex-fill">AWS and GCP</span>
+          </h4>
+          <ul class="chips pl-0">
+            <li>OpenSearch</li>
+            <li>Elasticache</li>
+            <li>RDS</li>
+            <li>Neptune</li>
+            <li>Lambda</li>
+            <li>Kinesis</li>
+            <li>BigQuery</li>
+            <li>Cloud Functions</li>
+          </ul>
+          <h4 class="flex skill flex-mid gap-s">
+            <i class="ri-mental-health-line"></i>
+            <span class="flex-fill">Soft Skills</span>
+          </h4>
+          <ul class="chips pl-0">
+            <li>Problem Solving</li>
+            <li>Teamwork</li>
+            <li>Communication</li>
+            <li>Adaptability</li>
+            <li>Time Management</li>
+          </ul>
+        </section>
 
-                <section class="hobbies">
-                    <h2 class="section-title flex gap-m flex-mid">
-                        <span>Hobbies</span>
-                        <hr class="flex-fill"/>
-                    </h2>
-                    <ul class="chips pl-0">
-                        <li>Travelling</li>
-                        <li>Watching Netflix series</li>
-                    </ul>
-                </section>
-            </div>
+        <!-- <section class="Full-Stack Courses">
+          <h2 class="section-title flex gap-m flex-mid">
+            <span>Education</span>
+            <hr class="flex-fill" />
+          </h2>
+          <div>
+            <h4>Attainu U</h4>
+            <p class="alpha-75 mv-5 flex text-sm flex-mid gap-m">
+            <span class="flex-fill"
+              >Educational institution in Bengaluru, Karnataka</span
+            >
+            </p>
+            <p class="text-accent text-sm flex gap-m flex-mid">
+            <span class="flex-fill">Full-Stack developement</span>
+            </p>
+          </div>
+        </section> -->
+        <section class="languages">
+          <h2 class="section-title flex gap-m flex-mid">
+            <span>Languages</span>
+            <hr class="flex-fill" />
+          </h2>
+          <ul class="chips pl-0">
+            <li>English</li>
+            <li>Hindi</li>
+          </ul>
+        </section>
         </div>
-        <div class="right">
-            <div class="in">
-                <section class="experience">
-                    <h2 class="section-title mt-0 flex gap-m flex-mid">
-                        <span>Experience</span>
-                        <hr class="flex-fill"/>
-                    </h2>
-                    <div>
-                        <h4>Software Engineer - I</h4>
-                        <p class="text-accent text-sm flex gap-m flex-mid">
-                            <span class="flex-fill">Hunch, Delhi</span>
-                            <span>Nov 2023 - present</span>
-                        </p>
-                        <ul class="text-sm alpha-75">
-                            <li>
-                                Worked with core platform team of 5 senior engineers, focusing on scalability and reliability of backend services.
-                            </li>
-                            <li>
-                                Spearheaded cost-saving initiatives by developing in-house solutions to replace third-party services.
-                            </li>
-                            <li>
-                                Managing the weekly release cycle, ensuring stablity and timely delivery of features to production.
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Software Development Engineer - III</h4>
-                        <p class="text-accent text-sm flex gap-m flex-mid">
-                            <span class="flex-fill">ShopUp, Bengaluru</span>
-                            <span>Jun 2022 - Nov 2023</span>
-                        </p>
-                        <ul class="text-sm alpha-75">
-                            <li>
-                                Key contributor to a lending product for small retailers and suppliers.
-                            </li>
-                            <li>
-                                Enhanced the end-to-end marketplace ecosystem and managed customer wallets.
-                            </li>
-                            <li>
-                                Automated KYC validations for onboarding and contributed to an event-based platform.
-                            </li>
-                            <li>
-                                Introduced asynchronous workflows to streamline development.
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Software Engineer</h4>
-                        <p class="text-accent text-sm flex gap-m flex-mid">
-                            <span class="flex-fill">Pluang, Gurugram</span>
-                            <span>Jul 2021 - Jun 2022</span>
-                        </p>
-                        <ul class="text-sm alpha-75">
-                            <li>
-                                Developed back-end services for mutual fund investments.
-                            </li>
-                            <li>
-                                Integrated Indonesian stocks into a multi-asset platform and created a gold investment module for Gojek.
-                            </li>
-                            <li>
-                                Utilized Node.js and PostgreSQL as the primary tech stack.
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Software Engineer</h4>
-                        <p class="text-accent text-sm flex gap-m flex-mid">
-                            <span class="flex-fill">Collegedunia, Gurugram</span>
-                            <span>Feb 2021 - Jul 2021</span>
-                        </p>
-                        <ul class="text-sm alpha-75">
-                            <li>
-                                Contributed to an exam preparation portal, focusing on a dynamic question module.
-                            </li>
-                            <li>
-                                Leveraged Nest.js, PostgreSQL, and MongoDB to support competitive exam aspirants.
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Software Engineer</h4>
-                        <p class="text-accent text-sm flex gap-m flex-mid">
-                            <span class="flex-fill">Zivost Technologies, Noida</span>
-                            <span>Dec 2019 - Feb 2021</span>
-                        </p>
-                        <ul class="text-sm alpha-75">
-                            <li>Developed back-end solutions for various clients using Node.js and MySQL.
-                            </li>
-                            <li>
-                                Released a delivery partner app, a cricket trivia app, and an e-learning platform for skilled labor upskilling.
-                            </li>
-                            <li>
-                                Created a service to interact with legacy hospitality software.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <h2 class="section-title flex gap-m flex-mid">
-                        <span>Internships</span>
-                        <hr class="flex-fill"/>
-                    </h2>
-                    <div>
-                        <h4>Full-Stack Intern</h4>
-                        <p class="text-accent text-sm flex gap-m flex-mid">
-                            <span class="flex-fill">Cyber Group India, Noida</span>
-                            <span>Jan 2019 - Jul 2019</span>
-                        </p>
-                        <ul class="text-sm alpha-75">
-                            <li>Developed full-stack projects using Java, JSP, Node.JS </li>
-                            <li>Contirbuted in developement of Leaves module for in-house HRMS.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Summer Intern</h4>
-                        <p class="text-accent text-sm flex gap-m flex-mid">
-                            <span class="flex-fill">Airport Authority Of India, Delhi</span>
-                            <span>Jun 2018 - Jul 2018</span>
-                        </p>
-                        <ul class="text-sm alpha-75">
-                            <li>Analyzed Market Information Data Transfer.
-                            </li>
-                            <li>Predicted forthcoming report stats for freight and cargo flights.
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+      </div>
+      <div class="right">
+        <div class="in">
+        <section class="experience" style="font-size: 0.95em">
+            <h2 class="section-title mt-0 flex gap-m flex-mid">
+              <span>Experience</span>
+              <hr class="flex-fill" />
+            </h2>
+            <div>
+              <h4>Software Engineer - I</h4>
+              <p class="text-accent text-sm flex gap-m flex-mid">
+                <span class="flex-fill">Hunch, Delhi</span>
+                <span>Nov 2023 - present</span>
+              </p>
+              <ul class="text-sm alpha-75">
+                <li>
+                    Worked with core platform team of 5 senior engineers,
+                    focusing on <strong>scalability</strong> and
+                    <strong>reliability</strong> of backend services.
+                </li>
+                <!-- <li>
+                    Spearheaded <strong>cost-saving initiatives</strong> by
+                    developing in-house solutions to replace third-party
+                    services.
+                </li> -->
+                <li>
+                    <strong>Managing the weekly release cycle</strong>, ensuring
+                    stability and timely delivery of features to production.
+                </li>
+              </ul>
             </div>
+            <div>
+              <!-- <p class="text-accent text-sm flex gap-m flex-mid">
+                <span class="flex-fill"
+                    >Individual Feature Delivered withing Core Platform
+                    Team</span
+                >
+              </p> -->
+              <ul class="text-sm alpha-75">
+                <li>
+                    <strong>Implemented OpenSearch integration</strong> for
+                    scalable text search, enhancing relevance and reducing query
+                    latency to less than 100ms.
+                </li>
+                <li>
+                    <strong>Reduced monthly costs by $2,500+</strong> by
+                    optimizing DB queries and implementing caching with AWS
+                    ElastiCache (Redis).
+                </li>
+                <li>
+                    <strong
+                      >Contributed to migration from Firestore to
+                      PostgreSQL</strong
+                    >, ensuring data consistency, improving security and zero
+                    downtime during production rollouts.
+                </li>
+                <li>
+                    <strong>Optimized top 10 APIs</strong> to enhance
+                    performance and user experience. Identified bottlenecks,
+                    refactored code, improved response time while ensuring 99.9%
+                    uptime.
+                </li>
+                <li>
+                    <strong>Implemented subgraph</strong> to enhance scalability
+                    and performance, enabling efficient data fetching and
+                    reducing system load.
+                </li>
+                <li>
+                    <strong>Led unit testing adoption</strong> across backend
+                    systems, improving code quality and delivery speed by
+                    integrating tests into CI/CD and training teams.
+                </li>
+                <li>
+                    <strong>Designed and implemented the First Time User Experience (FTUE) flow</strong>, integrating multiple innovative features to enhance user engagement and onboarding.
+                </li>
+                <li>
+                    Introduced <strong>short vibes and long vibes</strong> using internal Python-based knowledge APIs powered by <strong>OpenAI’s GPT-3</strong>, enabling personalized and dynamic content for new users.
+                </li>
+                <li>
+                    Integrated <strong>Leonardo.io</strong> for <strong>AI-driven avatar image generation</strong>, allowing users to create unique profile pictures during onboarding.
+                </li>
+                <!-- <li>
+                    Introduced <strong>push notifications</strong> to notify users when they receive a follow request or when their contacts sync successfully, improving user interaction and retention.
+                </li> -->
+                <li>
+                    <strong>Monitored the performance</strong> of features, products, and APIs created with multiple technologies.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4>Associate Software Engineer</h4>
+              <p class="text-accent text-sm flex gap-m flex-mid">
+                <span class="flex-fill">CensaNext, Bengaluru</span>
+                <span>Aug 2021 - Nov 2023</span>
+              </p>
+              <ul class="text-sm alpha-75">
+                <li>
+                    Developed an <strong>E-Commerce platform</strong> for
+                    distributors, handling <strong>orders</strong>,
+                    <strong>deliveries</strong>, and
+                    <strong>inventory</strong> via vans. Modules included
+                    <strong>Distributor Management</strong>,
+                    <strong>Inventory Management</strong>,
+                    <strong>Logistics</strong>,
+                    <strong>SAP Integration</strong>, and more.
+                </li>
+                <li>
+                    <strong>Call Center Portal</strong>: Designed the backend
+                    from scratch, implementing
+                    <strong>cross-verification</strong> for customer
+                    documents, <strong>image processing</strong> for
+                    <strong>PAN/GST validation</strong>, and secure
+                    <strong>authorization mechanisms</strong>.
+                </li>
+                <li>
+                    <strong>Garuda DMS Distributor</strong>: Enhanced
+                    <strong>sales reporting</strong>,
+                    <strong>customer management</strong>, and integrated
+                    <strong>OTP-based authorization</strong> for secure order
+                    management.
+                </li>
+                <li>
+                    Developed a web application for
+                    <strong>Expo Dubai 2021</strong>, showcasing
+                    <strong>WayCool's products and services</strong>.
+                </li>
+              </ul>
+            </div>
+            <!-- <div>
+              <h4>Associate Trainee</h4>
+              <p class="text-accent text-sm flex gap-m flex-mid">
+                <span class="flex-fill">WayCool, Bengaluru</span>
+                <span>Aug 2021 - Nov 2021</span>
+              </p>
+              <ul class="text-sm alpha-75">
+                <li>
+                    Developed a web application for
+                    <strong>Expo Dubai 2021</strong>, showcasing
+                    <strong>WayCool's products and services</strong>.
+                </li>
+              </ul>
+            </div> -->
+            <!-- <h2 class="section-title flex gap-m flex-mid">
+              <span>Internships</span>
+              <hr class="flex-fill" />
+            </h2> -->
+            <!-- <div>
+              <h4>Mern stack Developer</h4> -->
+              <!-- <p class="text-accent text-sm flex gap-m flex-mid">
+                <span class="flex-fill">Attainu, Bangalore</span>
+                <span>Jan 2020 - Jul 2021</span>
+              </p>
+              <ul class="text-sm alpha-75">
+                <li>
+                    Developed E-commerce full-stack projects using React,
+                    Node.JS, and MongoDB.
+                </li>
+              </ul> -->
+            <!-- </div>  -->
+        </section>
         </div>
+      </div>
     </main>
-</div>
-</body>
+    </div>
+  </body>
 </html>
