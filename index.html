@@ -41,16 +41,21 @@
         grid-template-columns: 68mm 1fr;
         grid-template-rows: auto 1fr;
       }
+      @page {
+        size: A4;
+        margin: 0;
+      }
       @media print {
         html, body { background: none; }
         .resume { margin: 0; box-shadow: none; width: 100%; min-height: 100vh; }
+        .no-print { display: none !important; }
       }
       /* Header */
       .header {
         grid-column: 1 / -1;
         background: var(--white);
         border-bottom: 3px solid var(--accent);
-        padding: 22px 28px 18px;
+        padding: 16px 28px 12px;
         display: flex;
         align-items: flex-start;
         gap: 28px;
@@ -82,9 +87,9 @@
       .sidebar {
         background: var(--sidebar-bg);
         border-right: 1px solid var(--border);
-        padding: 18px 16px;
+        padding: 14px 16px;
       }
-      .main { padding: 18px 22px; }
+      .main { padding: 14px 22px; }
       /* Section titles */
       .section-title {
         display: flex; align-items: center; gap: 8px;
@@ -115,7 +120,7 @@
       }
       .chip.accent { background: var(--accent-bg); color: var(--accent-2); border-color: #bfdbfe; }
       /* Experience */
-      .job { margin-bottom: 18px; }
+      .job { margin-bottom: 14px; }
       .job:last-child { margin-bottom: 0; }
       .job-header {
         display: flex; align-items: flex-start;
@@ -135,8 +140,8 @@
       .job-company i { font-size: 11px; color: var(--accent); }
       .job-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
       .job-bullets li {
-        font-size: 10.5px; color: var(--text-muted);
-        line-height: 1.55; padding-left: 12px; position: relative;
+        font-size: 10px; color: var(--text-muted);
+        line-height: 1.4; padding-left: 12px; position: relative;
       }
       .job-bullets li::before {
         content: ''; position: absolute; left: 0; top: 7px;
@@ -161,6 +166,9 @@
     </style>
   </head>
   <body>
+    <button class="no-print" onclick="window.print()" style="position: fixed; bottom: 20px; right: 20px; background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 50px; font-family: Inter; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 4px 12px rgba(37,99,235,0.3); z-index: 1000; display: flex; align-items: center; gap: 8px;">
+      <i class="ri-download-2-line"></i> Download PDF
+    </button>
     <div class="resume">
 
       <!-- HEADER -->
@@ -277,7 +285,7 @@
           <span class="lang-name">English</span>
           <div class="lang-dots">
             <span class="filled"></span><span class="filled"></span>
-            <span class="filled"></span><span class="filled"></span><span></span>
+            <span class="filled"></span><span class="filled"></span><span class="filled"></span>
           </div>
         </div>
         <div class="lang-item">
